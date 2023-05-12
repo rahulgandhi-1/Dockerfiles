@@ -1,0 +1,8 @@
+FROM ubuntu:latest
+WORKDIR /var/www/html/
+RUN apt-get update -y
+RUN apt-get install -y apache2
+RUN touch index.html
+RUN echo "hii i am rahul gandhi" > index.html
+EXPOSE 80
+CMD ["apache2ctl", "-D", "FOREGROUND"]
